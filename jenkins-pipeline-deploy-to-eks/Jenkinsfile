@@ -11,7 +11,6 @@ pipeline {
             steps {
                 script {
                     dir('jenkins-pipeline-deploy-to-eks/terraform') {
-                        sh "git pull origin build-4829020"
                         sh "terraform init"
                         sh "terraform apply -auto-approve"
                     }
