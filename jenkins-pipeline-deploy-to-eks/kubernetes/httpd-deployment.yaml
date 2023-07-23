@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-pacman
+spec:
+  selector:
+    matchLabels:
+      app: pacman
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pacman
+    spec:
+      containers:
+      - name: pacman
+        image: defalt762/pacman
+        ports:
+        - containerPort: 80
